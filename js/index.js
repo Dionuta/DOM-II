@@ -29,13 +29,13 @@ for (let i = 0; i < allButtonsOnPage.length; i++) {
 
   //mouseenter
  
-    allImage[0].addEventListener('mouseenter', event => {  //loops every img on page and on mouse enter adds image
+    allImage[1].addEventListener('mouseenter', event => {  //loops every img on page and on mouse enter adds image
       event.target.setAttribute('src', 'https://images.unsplash.com/photo-1509248961158-e54f6934749c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80');
     });
 
 
   //mouseout 
-    allImage[0].addEventListener('mouseleave', event => {  
+    allImage[1].addEventListener('mouseleave', event => {  
       event.target.setAttribute('src', 'https://i.kym-cdn.com/entries/icons/original/000/000/091/TrollFace.jpg');
     });
 
