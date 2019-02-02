@@ -8,7 +8,6 @@ const allImage = document.querySelectorAll('img');
 const body = document.querySelector('body');
 
 
-console.log(body);
 
 //click
 
@@ -55,3 +54,46 @@ for (let i = 0; i < allButtonsOnPage.length; i++) {
   body.addEventListener('mousedown' , event => {
      event.target.style.backgroundColor = getRandomColor();
   })
+
+
+  //load
+
+  window.addEventListener('load', function(){
+      const loader = document.querySelector('.loader'); 
+      loader.className += " hidden"
+  })
+
+  //keydown and key =up
+  window.addEventListener('keydown', checkKeyPress, false);
+  console.log('Press: A')
+  console.log('Press: B')
+  function checkKeyPress(key) {
+      if(key.keyCode == '65'){
+        allImage[2].setAttribute('src', 'https://cdn.vox-cdn.com/thumbor/-IA4Vhrr5q7FGmmjWW23k1wfU9s=/0x0:1920x1440/1200x800/filters:focal(807x567:1113x873)/cdn.vox-cdn.com/uploads/chorus_image/image/51321121/poltergeist_clown-2040.0.0.jpg')  
+      }
+      key.stopPropagation;
+       window.addEventListener('keyup', checkKeyUp, false);
+       function checkKeyUp(key) {
+       if(key.keyCode == '66'){
+       allImage[3].setAttribute('src', 'https://thumbs.gfycat.com/HeavenlyAdvancedApatosaur-max-1mb.gif')  
+    }
+  }
+}
+  
+
+
+//resize
+   window.addEventListener('resize', () => {
+    let j =  document.querySelector('h1');
+    j.textContent = `Height ${innerHeight}px and Width ${innerWidth}px`
+})
+
+//scroll 
+
+window.addEventListener('scroll', () =>{
+    let scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    let scrolled = window.scrollY;
+    if(Math.ceil(scrolled) === scrollable){
+        alert('The End Is Here...')
+    }
+})
